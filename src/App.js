@@ -26,9 +26,9 @@ const App = () => {
   function handleAddDeck(e) {
     const name = deckRef.current.value
     if (name === '') return
-    // setDecks(prevDecks => {
-    //   return [...prevDecks, {id: 1, name: name}]
-    // })
+    setDecks(prevDecks => {
+      return [...prevDecks, { name: name }]
+    })
     console.log(name)
     deckRef.current.value = null
   }

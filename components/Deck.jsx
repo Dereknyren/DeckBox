@@ -4,8 +4,12 @@ import React from 'react';
 
 export default function Deck({deck}){
   return (
-    <div>
-      {deck}
+    <div className="deck">
+        {deck.name}
+        <div className="deckButtons">
+        <button>Add Note</button>
+        <button>Delete</button>
+        </div>
     </div>
   )
 }

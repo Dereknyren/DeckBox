@@ -31,7 +31,7 @@ export default function DeckContainer({ decks }) {
 
   return (
     decks.map(deck => {
-      return <Deck key={deck} deck={deck} />
+      return <Deck key={deck.name} deck={deck} />
     })
   )
 }

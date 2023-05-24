@@ -1,8 +1,8 @@
 * {
-  background: rgb(84,115,142);
+  background: rgb(84, 115, 142);
 }
 
-h1{
+h1 {
   display: flex;
   justify-content: center;
   color: #A88C7D;
@@ -28,9 +28,16 @@ h1{
 }
 
 .addButton {
-  background-color:#9DBA94;
+  background-color: #9DBA94;
   border-radius: 5px;
 }
+
+.deck {
+  background-color: #A88C7D;
+  margin-right: 10px;
+  display:inline-grid;
+}
+
 /* #7297A0 - gray/blue
    #54738E - darker blue
    #82AC7C - brighter green
