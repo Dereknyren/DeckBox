@@ -1,0 +1,39 @@
+* {
+  background: rgb(84,115,142);
+}
+
+h1{
+  display: flex;
+  justify-content: center;
+  color: #A88C7D;
+}
+
+.p1 {
+  display: flex;
+  justify-content: center;
+  color: #B2A68D;
+}
+
+.addDeck {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.textBox {
+  background-color: #82AC7C;
+  border-radius: 5px;
+  height: 25px;
+  margin-right: 8px;
+}
+
+.addButton {
+  background-color:#9DBA94;
+  border-radius: 5px;
+}
+/* #7297A0 - gray/blue
+   #54738E - darker blue
+   #82AC7C - brighter green
+   #9DBA94 - sage
+   #A88C7D - red/brown 
+   #B2A68D - more brown*/
