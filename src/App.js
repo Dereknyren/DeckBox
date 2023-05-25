@@ -13,6 +13,7 @@ import axios from 'axios'
 
 const App = () => {
   const [decks, setDecks] = useState([])
+
   const deckRef = useRef()
 
   // // useEffect(() => {
@@ -30,7 +31,6 @@ const App = () => {
     setDecks(prevDecks => {
       return [...prevDecks, { name: name }]
     })
-    console.log(name)
     deckRef.current.value = null
   }
 
@@ -42,7 +42,7 @@ const App = () => {
         <button className="addButton" onClick={handleAddDeck}>Add</button>
       </div>
       <div>
-        <DeckContainer decks={decks} />
+        <DeckContainer decks={decks} deckRef={deckRef} />
       </div>
     </>
   )

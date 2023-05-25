@@ -5,7 +5,7 @@ import Deck from '../components/Deck.jsx';
 
 
 
-export default function DeckContainer({ decks }) {
+export default function DeckContainer({ decks, deckRef }) {
  
 // useEffect(() => {
 //   const storedDecks = localStorage.getItem(LOCAL_STORAGE_KEY)
@@ -31,7 +31,7 @@ export default function DeckContainer({ decks }) {
 
   return (
     decks.map(deck => {
-      return <Deck key={deck.name} deck={deck} />
+      return <Deck key={deck.name} deckName={deck.name}/>
     })
   )
 }
