@@ -3,12 +3,16 @@ import React from 'react';
 
 
 export default function Deck({deck}){
+
+  function handleDelete(){
+  }
+
   return (
     <div className="deck">
         {deck.name}
-        <div className="deckButtons">
-        <button>Add Note</button>
-        <button>Delete</button>
+        <div className="deckButtonsContainer">
+        <button className="deckButtons">Add Note</button>
+        <button className="deckButtons" onClick="handleDelete">Delete</button>
         </div>
     </div>
   )

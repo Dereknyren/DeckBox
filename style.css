@@ -18,6 +18,7 @@ h1 {
   display: flex;
   justify-content: center;
   text-align: center;
+  padding-bottom: 15px;
 }
 
 .textBox {
@@ -34,9 +35,22 @@ h1 {
 
 .deck {
   background-color: #A88C7D;
+  padding: 10px;
   margin-right: 10px;
-  display:inline-grid;
+  display: inline-grid;
+  border-radius: 5px;
 }
+
+.deckButtonsContainer {
+  background-color: #A88C7D;
+}
+
+.deckButtons {
+  border-radius: 5px;
+  margin: 10px;
+  background-color: #9DBA94
+}
+
 
 /* #7297A0 - gray/blue
    #54738E - darker blue
