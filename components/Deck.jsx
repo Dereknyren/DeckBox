@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 //add note feature so you can write down future changes you want to make
 
 
-export default function Deck({ deckName }) {
+export default function Deck({ deckName, setDecks, decks }) {
   const [commanderImage, setCommanderImage] = useState()
   useEffect(() => {
     axios.get(`https://api.scryfall.com/cards/search?q=${deckName}`)
@@ -15,19 +15,22 @@ export default function Deck({ deckName }) {
         }
       })
   }, [])
-  //image_uris
 
 
-  // function handleDelete(){
-  // }
+  function handleDelete(e) {
+    setDecks(decks.filter((item) => item.name !== deckName))
+    console.log(decks)
+  }
 
   return (
     <div className="deck">
-      {deckName}
-      <div className="deckButtonsContainer">
+      <div className="cardImg">
+        {/* {deckName} */}
         <img src={commanderImage}></img>
+      </div>
+      <div className="deckButtonsContainer">
         <button className="deckButtons">Add Note</button>
-        <button className="deckButtons">Delete</button>
+        <button className="deckButtons" onClick={handleDelete}>Delete</button>
       </div>
     </div>
   )

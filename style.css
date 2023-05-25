@@ -5,7 +5,7 @@
 h1 {
   display: flex;
   justify-content: center;
-  color: #A88C7D;
+  color: #D8F2FF;
 }
 
 .p1 {
@@ -39,6 +39,13 @@ h1 {
   margin-right: 10px;
   display: inline-grid;
   border-radius: 5px;
+}
+
+.cardImg {
+  background-color: #A88C7D;
+  padding: 8px 5px 3px 5px;
+  display: flex;
+  justify-content: center;
 }
 
 .deckButtonsContainer {

@@ -1,36 +1,32 @@
 import React, { useState, useRef, useEffect } from "react";
 //Do we need react-router-dom
-//import all components and containers created
 import MainContainer from '../containers/MainContainer'
-//import stylesheet (css)
-import styles from '../style.css'
+import '../style.css'
 import DeckContainer from '../containers/DeckContainer'
 import axios from 'axios'
 
 //add a div to wrap first p and add in TotalDecks
 
-// const LOCAL_STORAGE_KEY = 'deckApp.decks'
+const LOCAL_STORAGE_KEY = 'deckApp.decks'
 
 const App = () => {
   const [decks, setDecks] = useState([])
 
   const deckRef = useRef()
 
-  // // useEffect(() => {
-  // //   const storedDecks = localStorage.getItem(LOCAL_STORAGE_KEY)
-  // //   if (storedDecks) setDecks(storedDecks)
-  // // })
+  useEffect(() => {
+    const storedDecks = localStorage.getItem(LOCAL_STORAGE_KEY)
+    if (storedDecks) setDecks(JSON.parse(storedDecks))
+  }, [])
 
-  // // useEffect(() => {
-  // //   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(decks))
-  // // }, [decks])
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(decks))
+  }, [decks])
 
   function handleAddDeck(e) {
     const name = deckRef.current.value
     if (name === '') return
-    setDecks(prevDecks => {
-      return [...prevDecks, { name: name }]
-    })
+    setDecks([...decks, { name: name }])
     deckRef.current.value = null
   }
 
@@ -42,7 +38,7 @@ const App = () => {
         <button className="addButton" onClick={handleAddDeck}>Add</button>
       </div>
       <div>
-        <DeckContainer decks={decks} deckRef={deckRef} />
+        <DeckContainer decks={decks} deckRef={deckRef} setDecks={setDecks}/>
       </div>
     </>
   )
